@@ -7,6 +7,11 @@ class LiveRecord
     sql = "SELECT * FROM #{self.name.downcase + 's'}"
     results = DB[:conn].execute(sql);
   end
+
+  def save
+    sql = "INSERT INTO #{self.class.to_s.downcase + 's'} (name) VALUES ('#{name}')"
+    results = DB[:conn].execute(sql);
+  end
 end
 
 class Dog < LiveRecord
