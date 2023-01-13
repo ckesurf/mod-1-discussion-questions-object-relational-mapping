@@ -1,16 +1,11 @@
 class LiveRecord
-  # This is the dog or cat's name, as opposed to the Class name! which is used later
-  attr_accessor :name
-
+  
   def self.all
-    # self.name.downcase + "s"
-    sql = "SELECT * FROM #{self.name.downcase + 's'}"
-    results = DB[:conn].execute(sql);
+    # Add code here!
   end
 
   def save
-    sql = "INSERT INTO #{self.class.to_s.downcase + 's'} (name) VALUES ('#{name}')"
-    results = DB[:conn].execute(sql);
+    # Add code here!
   end
 end
 
