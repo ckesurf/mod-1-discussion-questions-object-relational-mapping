@@ -4,12 +4,44 @@ Consider the following questions with the people at your table. Write down your
 answers in a notebook or on a whiteboard.
 
 1. First, discuss with your table - what is an ORM? Why is an ORM useful?
+
+Answer:
+
+```
+ORM - Object Relational Mapper
+Helps ruby interact with SQL
+Tables are classes
+Rows are instances
+Columns are attributes
+```
+
 2. Pretend that you're building Twitter. Let's say that a tweet has a message
    and belongs to a User. A User has a username and has_many tweets. What
    columns would be on those two tables?
+
+Answer:
+
+```
+User
+- id
+- name
+
+Tweet
+- id
+- message
+- user_id
+```
+
 3. Now that we have our tables, pretend that we are defining a method on our
    User class that returns all the tweets. What SQL fires when this method is
    called?
+
+Answer:
+
+```sql
+SELECT * FROM tweets;
+```
+
 4. Writing out all of these database interactions by hand can be messy. How
    would you create a method on the superclass to make sure the correct SQL
    fires for each class?
@@ -17,7 +49,7 @@ answers in a notebook or on a whiteboard.
 ```rb
 class LiveRecord
 
-  def self.all 
+  def self.all
     # Add code here!
   end
 end

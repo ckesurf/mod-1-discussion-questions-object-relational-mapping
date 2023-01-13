@@ -1,11 +1,15 @@
 class LiveRecord
-  
+  attr_accessor :name
+
   def self.all
-    # Add code here!
+
+    sql = "SELECT * FROM #{self.name.downcase + 's'}"
+    DB[:conn].execute(sql)
   end
 
   def save
-    # Add code here!
+    sql = "INSERT INTO #{self.class.to_s.downcase + 's'} (name) VALUES ('#{self.name}')"
+    DB[:conn].execute(sql)
   end
 end
 
